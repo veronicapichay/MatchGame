@@ -33,7 +33,6 @@ namespace MatchGame
             SetUpGame();
 
         }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             tenthsOfSecondsElapsed++;
@@ -46,10 +45,8 @@ namespace MatchGame
 
             }
         }
-
         private void SetUpGame()
         {
-
             List<string> animalEmoji = new List<string>()
             {
                "🦄", "🦄",
@@ -61,7 +58,6 @@ namespace MatchGame
                "🐞", "🐞",
                "🦋", "🦋",
             };
-
             Random random = new Random();
 
             foreach (TextBlock textBlock in mainGrid.Children.OfType<TextBlock>())
@@ -75,7 +71,6 @@ namespace MatchGame
                     animalEmoji.RemoveAt(index);
                 }
             }
-
             timer.Start();
             tenthsOfSecondsElapsed = 0; 
             matchesFound = 0;
@@ -105,24 +100,13 @@ namespace MatchGame
             {
                 lastTextBlockClicked.Visibility = Visibility.Visible;
                 findingMatch = false;
-
             }
-
-        
-
-
-
-
         }
-
-     
 
         private void TimeTextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
                 if (matchesFound == 8)
                 SetUpGame();
-
-
         }
     }
 
